@@ -7,6 +7,11 @@ public class ObjectHit : MonoBehaviour
     // Start is called before the first frame update
     private void OnCollisionEnter(Collision collision)
     {
-        GetComponent<MeshRenderer>().material.color = Color.cyan;
+        if (collision.gameObject.tag == "Player")
+        {
+            GetComponent<MeshRenderer>().material.color = Color.cyan;
+            gameObject.tag = "Hit";
+
+        }
     }
 }
